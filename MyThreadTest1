@@ -1,0 +1,29 @@
+/*Create thread by implementing Runnable interface*/
+
+class MyExceptionDemo1 implements Runnable
+{
+	int item;
+	public void run()//Overiding the run()
+	{
+		for(item=1;item<=100;item++)
+		{
+			System.out.println("Value = "+item);
+		}
+	}
+}
+
+class MyExceptionTest1
+{
+	public static void main(String args[])
+	{
+		MyExceptionDemo1 ob1 = new MyExceptionDemo1();//Created one thread//Enters to new state 
+		MyExceptionDemo1 ob2 = new MyExceptionDemo1();//Created one thread//Enters to new state 
+		MyExceptionDemo1 ob3 = new MyExceptionDemo1();//Created one thread//Enters to new state 
+		Thread ob = new Thread(ob1);
+		ob.start();//Moves to Runnable state
+		Thread ob5 = new Thread(ob2);
+		ob5.start();//Moves to Runnable state
+		Thread ob6 = new Thread(ob3);
+		ob6.start();//Moves to Runnable state
+	}
+}

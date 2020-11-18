@@ -1,0 +1,26 @@
+/*Create thread by extending Thread class*/
+
+class MyExceptionDemo extends Thread
+{
+	int item;
+	public void run()//Overiding the run()
+	{
+		for(item=1;item<=100;item++)
+		{
+			System.out.println("Value = "+item);
+		}
+	}
+}
+
+class MyExceptionTest
+{
+	public static void main(String args[])
+	{
+		MyExceptionDemo ob1 = new MyExceptionDemo();//Created one thread//Enters to new state 
+		MyExceptionDemo ob2 = new MyExceptionDemo();//Created one thread//Enters to new state 
+		MyExceptionDemo ob3 = new MyExceptionDemo();//Created one thread//Enters to new state 
+		ob1.start();//Moves to Runnable state
+		ob2.start();//Moves to Runnable state
+		ob3.start();//Moves to Runnable state
+	}
+}
